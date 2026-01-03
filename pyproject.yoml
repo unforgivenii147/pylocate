@@ -1,0 +1,26 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "pylocate"
+version = "0.6.3"
+description = "Fast file locator using Rust jwalk and SQLite FTS5"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[project.scripts]
+pylocate = "pylocate.cli:main"
+updatedb-py = "pylocate.cli:updatedb"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "pylocate.pylocate_rust"
+

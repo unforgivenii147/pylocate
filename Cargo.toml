@@ -1,0 +1,18 @@
+[package]
+name = "pylocate"
+version = "0.6.3"
+edition = "2021"
+
+[lib]
+name = "pylocate_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.27.1", features = ["extension-module"] }
+jwalk = "0.8"
+rusqlite = { version = "0.30", features = ["bundled"] }
+rayon = "1.8"
+
+[profile.release]
+lto = true
+codegen-units = 1
