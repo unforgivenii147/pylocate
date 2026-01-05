@@ -8,7 +8,7 @@ name = "pylocate_rust"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.27.1", features = ["extension-module"] }
+pyo3 = { version = "0.20.0", features = ["extension-module"] }
 jwalk = "0.8"
 rusqlite = { version = "0.30", features = ["bundled"] }
 rayon = "1.8"

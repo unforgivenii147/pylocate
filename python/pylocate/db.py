@@ -15,7 +15,7 @@ class Database:
 
     def __init__(self, db_path: Optional[str] = None):
         """Initialize database manager
-        
+
         Args:
             db_path: Path to database file. If None, uses default location.
         """
@@ -25,7 +25,7 @@ class Database:
                 base_dir = Path.home() / '.local' / 'var' / 'pylocate'
             else:
                 base_dir = Path.home() / '.local' / 'var' / 'pylocate'
-            
+
             base_dir.mkdir(parents=True, exist_ok=True)
             self.db_path = str(base_dir / 'pylocate.db')
         else:
@@ -33,10 +33,10 @@ class Database:
 
     def update(self, paths: Optional[List[str]] = None) -> int:
         """Update the database by indexing filesystem
-        
+
         Args:
             paths: List of paths to index. If None, indexes common locations.
-            
+
         Returns:
             Number of files indexed
         """
@@ -56,7 +56,7 @@ class Database:
                     '/opt',
                     '/var',
                 ]
-            
+
             # Filter to only existing paths
             paths = [p for p in paths if os.path.exists(p)]
 
@@ -64,11 +64,11 @@ class Database:
 
     def search(self, pattern: str, limit: Optional[int] = None) -> List[str]:
         """Search for files matching pattern
-        
+
         Args:
             pattern: Search pattern (supports * and ? wildcards)
             limit: Maximum number of results
-            
+
         Returns:
             List of matching file paths
         """
@@ -76,7 +76,7 @@ class Database:
 
     def stats(self) -> tuple:
         """Get database statistics
-        
+
         Returns:
             Tuple of (file_count, db_size_bytes)
         """
