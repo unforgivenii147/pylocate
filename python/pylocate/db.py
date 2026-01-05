@@ -21,13 +21,13 @@ class Database:
         """
         if db_path is None:
             # Support both standard Linux and Termux
-            if os.environ.get('TERMUX_VERSION'):
-                base_dir = Path.home() / '.local' / 'var' / 'pylocate'
+            if os.environ.get("TERMUX_VERSION"):
+                base_dir = Path.home() / ".local" / "var" / "pylocate"
             else:
-                base_dir = Path.home() / '.local' / 'var' / 'pylocate'
+                base_dir = Path.home() / ".local" / "var" / "pylocate"
 
             base_dir.mkdir(parents=True, exist_ok=True)
-            self.db_path = str(base_dir / 'pylocate.db')
+            self.db_path = str(base_dir / "pylocate.db")
         else:
             self.db_path = db_path
 
@@ -42,19 +42,19 @@ class Database:
         """
         if paths is None:
             # Default paths to index
-            if os.environ.get('TERMUX_VERSION'):
+            if os.environ.get("TERMUX_VERSION"):
                 # Termux-specific paths
                 paths = [
                     str(Path.home()),
-                    '/data/data/com.termux/files/usr',
+                    "/data/data/com.termux/files/usr",
                 ]
             else:
                 # Standard Linux paths
                 paths = [
                     str(Path.home()),
-                    '/usr',
-                    '/opt',
-                    '/var',
+                    "/usr",
+                    "/opt",
+                    "/var",
                 ]
 
             # Filter to only existing paths
