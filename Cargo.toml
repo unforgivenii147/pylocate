@@ -1,10 +1,10 @@
 [package]
-name = "pylocate"
+name = "pymlocate"
 version = "0.6.3"
 edition = "2021"
 
 [lib]
-name = "pylocate_rust"
+name = "pymlocate_rust"
 crate-type = ["cdylib"]
 
 [dependencies]

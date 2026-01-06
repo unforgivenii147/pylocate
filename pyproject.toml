@@ -3,7 +3,7 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "pylocate"
+name = "pymlocate"
 version = "0.6.3"
 description = "Fast file locator using Rust jwalk and SQLite FTS5"
 readme = "README.md"

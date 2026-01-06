@@ -258,7 +258,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pylocate"
+name = "pymlocate"
 version = "0.6.3"
 dependencies = [
  "jwalk",
